@@ -1,0 +1,11 @@
+.roomlist {
+  float: left;
+  width: 400px;
+  height: 100vh;
+  background-color: #dee0e2;
+}
+
+.sidebar-list {
+  text-decoration: none;
+  color: #abaeb2;
+}
