@@ -18,11 +18,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header>
-          <h1 className='title'>Bloc Chat</h1>
-        </header>
         <main>
-          <RoomList firebase={this.firebase} />
+          <RoomList firebase={firebase} />
         </main>
       </div>
     );

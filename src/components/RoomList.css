@@ -6,6 +6,17 @@
 }
 
 .sidebar-list {
-  text-decoration: none;
-  color: #abaeb2;
+  color: #95979b;
+  padding-top: 20px;
+}
+
+.rooms {
+  list-style: none;
+  font-size: 1.5em;
+  padding-bottom: 20px;
+}
+
+.title {
+  font-size: 2.5em;
+  padding-left: 25px;
 }
