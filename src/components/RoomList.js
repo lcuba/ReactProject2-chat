@@ -35,6 +35,7 @@ class RoomList extends Component {
       const newRoom = e.target.elements.newRoomName.value;
       this.roomsRef.push({name: newRoom});
       this.setState({handleForm: false});
+      e.target.elements.newRoomName.value = '';
     }
 
   render() {
