@@ -27,6 +27,7 @@ class MessageList extends Component {
   render() {
     return(
       <section className='message-area'>
+        <h2>{this.props.activeRoomName}</h2>
         <ul className='message-list'>
           {
             this.state.messages.map((message) => {
