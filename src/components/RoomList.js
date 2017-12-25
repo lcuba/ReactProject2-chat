@@ -38,6 +38,10 @@ class RoomList extends Component {
       e.target.elements.newRoomName.value = '';
     }
 
+    selectRoom(room) {
+      this.props.activeRoom(room)
+    }
+
   render() {
     return (
       <section className='roomlist'>
@@ -46,7 +50,7 @@ class RoomList extends Component {
         <ul className='sidebar-list'>
         {
           this.state.rooms.map((room, index) =>
-            <li className='rooms' key={index}>{room.name}</li>
+            <li className='rooms' key={index} onClick={(e) => this.selectRoom(room, e)}>{room.name}</li>
         )}
         </ul>
         <form className={this.state.handleForm ? 'displayed' : 'hidden'} onSubmit={this.createRoom}>

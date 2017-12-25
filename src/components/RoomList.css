@@ -17,6 +17,10 @@
   cursor: pointer;
 }
 
+/*.rooms:hover {
+  text-decoration: underline;
+}*/
+
 .title {
   font-size: 2.5em;
   padding-left: 25px;

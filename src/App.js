@@ -26,23 +26,33 @@ class App extends Component {
     };
 
     this.setUser = this.setUser.bind(this);
+    this.activeRoom = this.activeRoom.bind(this);
   }
 
   setUser(user) {
     this.setState({username: user});
   }
 
+  activeRoom(room) {
+    this.setState({activeRoom: room});
+  }
+
   render() {
+    const showMessages = this.state.activeRoom;
     return (
       <div className="App">
         <main>
-          <RoomList firebase={firebase} activeRoom={this.state.activeRoom}/>
-          <MessageList firebase={firebase} activeRoom={this.state.activeRoom} />
+          <RoomList firebase={firebase} activeRoom={this.activeRoom}/>
+          {showMessages ?
+            (<MessageList firebase={firebase} activeRoom={this.state.activeRoom.key} />)
+            :
+            (null)
+          }
           <User
             firebase={firebase}
             setUser={this.setUser}
           />
-        <p>Welcome, {this.state.username.displayName || 'Guest'}</p>  
+        <p>Welcome, {this.state.username.displayName || 'Guest'}</p>
         </main>
       </div>
     );
