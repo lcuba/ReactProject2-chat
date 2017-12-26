@@ -27,10 +27,15 @@ class App extends Component {
 
     this.setUser = this.setUser.bind(this);
     this.activeRoom = this.activeRoom.bind(this);
+    this.resetUser = this.resetUser.bind(this);
   }
 
   setUser(user) {
     this.setState({username: user});
+  }
+
+  resetUser() {
+    this.setState({username: ''});
   }
 
   activeRoom(room) {
@@ -51,8 +56,9 @@ class App extends Component {
           <User
             firebase={firebase}
             setUser={this.setUser}
+            resetUser={this.resetUser}
           />
-        <p>Welcome, {this.state.username.displayName || 'Guest'}</p>
+          <p>{`Welcome ${this.state.username.displayName ? this.state.username.displayName : ''}`}</p>
         </main>
       </div>
     );

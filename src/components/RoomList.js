@@ -13,6 +13,7 @@ class RoomList extends Component {
 
     this.roomsRef = this.props.firebase.database().ref('rooms');
     this.createRoom = this.createRoom.bind(this);
+    this.formToggle = this.formToggle.bind(this);
   }
 
     componentDidMount() {
@@ -46,24 +47,28 @@ class RoomList extends Component {
     return (
       <section className='roomlist'>
         <h1 className='title'>Bloc Chat</h1>
-        <button className='new-room' onClick={this.formToggle.bind(this)}>New room</button>
+        <button className='new-room' onClick={this.formToggle}>New room</button>
         <ul className='sidebar-list'>
         {
           this.state.rooms.map((room, index) =>
             <li className='rooms' key={index} onClick={(e) => this.selectRoom(room, e)}>{room.name}</li>
         )}
         </ul>
-        <form className={this.state.handleForm ? 'displayed' : 'hidden'} onSubmit={this.createRoom}>
-          <h2 className='form-title'>Create new room</h2>
-          <h3 className='text-field-description'>Enter a room name</h3>
-          <input
-            type='text'
-            id='new-room-name'
-            name='newRoomName'
-          />
-          <button className='cancel' onClick={this.formtoggle}>Cancel</button>
-          <button className='create-room' type='submit'>Create room</button>
-        </form>
+
+
+        <div className={this.state.handleForm ? 'displayed' : 'hidden'}>
+          <form onSubmit={this.createRoom}>
+            <h2 className='form-title'>Create new room</h2>
+            <h3 className='text-field-description'>Enter a room name</h3>
+            <input
+              type='text'
+              id='new-room-name'
+              name='newRoomName'
+            />
+            <button className='create-room' type='submit'>Create room</button>
+            </form>
+          <button className='cancel' onClick={this.formToggle}>Cancel</button>
+        </div>
       </section>
     );
   }

@@ -13,15 +13,15 @@ class User extends Component {
 
   logoff() {
     this.props.firebase.auth().signOut().then(() => {
-      this.props.setUser(null);
+      this.props.resetUser();
     });
   }
 
-  componentDidMount() {
+/*  componentDidMount() {
     this.props.firebase.auth().onAuthStateChanged(user => {
-      this.props.setUser(user);
+      this.props.setUser(user = '');
     });
-  }
+  }*/
 
   render() {
     return(
