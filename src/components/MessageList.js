@@ -14,6 +14,35 @@ class MessageList extends Component {
     };
 
     this.messagesRef = this.props.firebase.database().ref('messages');
+    this.handleChange = this.handleChange.bind(this);
+    this.sendMessage = this.sendMessage.bind(this);
+  }
+
+  handleChange(e) {
+    e.preventDefault();
+    this.setState({
+      username: this.props.username,
+      content: e.target.value,
+      sentAt: this.props.firebase.database.ServerValue.TIMESTAMP,
+      roomId: this.props.activeRoom
+    });
+  }
+
+  sendMessage(e) {
+    e.preventDefault();
+    this.messagesRef.push({
+      username: this.state.username,
+      content: this.state.content,
+      sentAt: this.state.sentAt,
+      roomId: this.state.roomId
+    });
+
+    this.setState({
+      username: '',
+      content: '',
+      sentAt: '',
+      roomId: ''
+    });
   }
 
   componentDidMount() {
@@ -38,6 +67,10 @@ class MessageList extends Component {
             })
           }
         </ul>
+        <form className='message-bar' onSubmit={this.sendMessage}>
+          <input type='text' value={this.state.content} placeholder='Enter message' onChange={this.handleChange} />
+          <input type='submit' value='Send' />
+        </form>
       </section>
     );
   }
