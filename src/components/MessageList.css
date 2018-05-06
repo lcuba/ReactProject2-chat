@@ -1,3 +1,58 @@
 .message-area {
-  float: right;
+  display: absolute;
+  height: 90vh;
+  width: 90%;
+  margin-left: 100px;
+}
+
+.room-name {
+  text-align: center;
+}
+
+.message-list {
+  margin-left: 290px;
+  list-style: none;
+  height: 90%;
+  overflow: auto;
+}
+
+.messages {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding: 20px;
+  border-top: 1px solid #bbb;
+  border-bottom: 1px solid #bbb;
+}
+
+.messages:nth-child(odd) {
+  background-color: #d9d9d9;
+}
+
+.messages:first-child {
+  border-top: none;
+}
+
+.message-bar {
+  margin-left: 340px;
+}
+
+.message-content {
+  width: 85%;
+  height: 70px;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.message-send {
+  width: 80px;
+  height: 75px;
+  background: none;
+  cursor: pointer;
+  outline: none;
+  padding: .7em 1.7em .7em 1.7em;
+  background-color: #444;
+  border: none;
+  text-shadow: none;
+  color: #ddd;
+  border-radius: 5px;
 }

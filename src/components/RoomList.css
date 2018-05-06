@@ -34,15 +34,57 @@
   cursor: pointer;
   outline: none;
   padding: .7em 1.7em .7em 1.7em;
-  background-color: #eff1f4;
+  background-color: #c0f9b6;
   border: none;
   text-shadow: none;
-  color: #95979b;
+  color: #333;
   border-radius: 5px;
 }
 
 .displayed {
+  margin-left: 38px;
+  display: inline-block;
+  border: 1px solid #888;
+  padding: 10px;
+  border-radius: 4px;
+}
 
+.displayed h2 {
+  text-align: center;
+}
+
+.displayed h3 {
+  text-align: center;
+}
+
+.displayed input {
+  border-radius: 6px;
+  margin-left: 10px;
+}
+
+.displayed .create-room {
+  background: none;
+  cursor: pointer;
+  outline: none;
+  padding: .7em 1.7em .7em 1.7em;
+  background-color: #c0f9b6;
+  border: none;
+  text-shadow: none;
+  color: #333;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.displayed .cancel {
+  background: none;
+  cursor: pointer;
+  outline: none;
+  padding: .7em 1.7em .7em 1.7em;
+  background-color: #f9b6b6;
+  border: none;
+  text-shadow: none;
+  color: #333;
+  border-radius: 5px;
 }
 
 .hidden {

@@ -46,7 +46,7 @@ class RoomList extends Component {
   render() {
     return (
       <section className='roomlist'>
-        <h1 className='title'>Bloc Chat</h1>
+        <h1 className='title'>React Chat</h1>
         <button className='new-room' onClick={this.formToggle}>New room</button>
         <ul className='sidebar-list'>
         {
@@ -65,6 +65,8 @@ class RoomList extends Component {
               id='new-room-name'
               name='newRoomName'
             />
+            <br />
+            <br />
             <button className='create-room' type='submit'>Create room</button>
             </form>
           <button className='cancel' onClick={this.formToggle}>Cancel</button>

@@ -48,6 +48,13 @@ class App extends Component {
       <div className="App">
         <main>
           <RoomList firebase={firebase} activeRoom={this.activeRoom}/>
+          <User
+            firebase={firebase}
+            setUser={this.setUser}
+            resetUser={this.resetUser}
+          />
+          <p>{`Welcome ${this.state.username.displayName ? this.state.username.displayName : ''}`}</p>
+          <br />
           {showMessages ?
             (<MessageList firebase={firebase}
             activeRoom={this.state.activeRoom.key}
@@ -56,12 +63,6 @@ class App extends Component {
             :
             (null)
           }
-          <User
-            firebase={firebase}
-            setUser={this.setUser}
-            resetUser={this.resetUser}
-          />
-          <p>{`Welcome ${this.state.username.displayName ? this.state.username.displayName : ''}`}</p>
         </main>
       </div>
     );
